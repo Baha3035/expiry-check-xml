@@ -41,10 +41,10 @@ def main():
             #     data = json.dumps(
             #         {
             #             'payload': {
-            #                 'summary': f'{clusterName} env={svc.metadata.namespace} Fusion License going to expire within 14 days',
-            #                 'source': f'{clusterName} env={svc.metadata.namespace}',
+            #                 'summary': f'{clusterName} env={scrt.metadata.namespace} BasisTech License going to expire within 14 days',
+            #                 'source': f'{clusterName} env={scrt.metadata.namespace}',
             #                 'severity': "info",
-            #                 'custom_details': f'{clusterName} env={svc.metadata.namespace} Fusion License Expiration on {expirationDate}',
+            #                 'custom_details': f'{clusterName} env={scrt.metadata.namespace} Basistech License Expiration on {expirationDate}',
             #             },
             #             'routing_key': routing_key,
             #             'event_action': 'trigger'
@@ -52,13 +52,6 @@ def main():
             #     )
             #     resp = requests.post(url=pagerDuty_url, data=data) 
             #     return daysLeftBeforeExpiration  
-        # if svc.spec.selector:
-        #     for key, value in svc.spec.selector.items():
-        #         if value == 'fusion-admin':
-        #             namespace = svc.spec.selector.get('app.kubernetes.io/instance')
-        #             url = f"http://admin.{namespace}.cluster.local:8765"
-        #             print(url)
-                        
 
 if __name__ == '__main__':
     main()
