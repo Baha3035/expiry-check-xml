@@ -31,7 +31,7 @@ def main():
             #response = requests.get(f'http://admin.{svc.metadata.namespace}.cluster.local:8765/api/v1/license/expiration')
             #expirationDate = response.json().split("T")[0]
             # print("The license will expire on " + expirationDate)
-            license_Expiry_day = datetime.strptime(expirationDate, '%B %d %Y')
+            license_Expiry_day = datetime.strptime(expirationDate, '%b %d %Y')
             print(license_Expiry_day)
             today = datetime.today()
             diff = license_Expiry_day - today 
